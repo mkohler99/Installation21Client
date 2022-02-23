@@ -1,0 +1,326 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+@font-face {
+	  font-family: 'aceFuture';
+	  src: url('../resources/AceFuturism.woff') format('woff'),
+	  url('../resources/ace_futurism.ttf') format('truetype');
+	}
+
+body{
+	background-color: #111;
+	font: normal 16px Arial, Helvetica, sans-serif;
+	line-height: 1.6em;
+	margin: 25px;
+	margin: 0px;
+	padding:0px;
+	align-content: center;
+}
+.header{
+	position: fixed;
+	z-index:1;
+	top: 0;
+	width: 100%;
+	background-color: #FFFF00;
+	text-align: center;
+	padding:20px;
+	color: #000;
+	font-family: aceFuture;
+	font-size:22px;
+	font-weight:bold;
+}
+
+#initialScreen{
+	/*REMOVE THIS TO TEST*/
+	/*display: none;*/
+	text-align: center;
+	background-color: #2B2D42;
+	color: #fff;
+	margin: auto;
+	padding:10px;
+	padding-top:70px;
+	width: 90%;
+}
+
+
+.Controls{
+	line-height: 2.6em;
+	font-size: 18px;
+	margin:auto;
+}
+
+#picker{
+	text-align: center;
+	width:150px;
+	margin:auto;
+	padding-bottom:0;
+	justify-content: center;
+}
+
+.CodeDisplay{
+	outline: green 1px solid;
+	font-family: aceFuture;
+	font-size:24px;
+	background: black;
+	color: yellow;
+	margin:auto;
+	margin-top: 10px;
+	padding: 10px;
+	min-height: 150px;
+	width:90%
+}
+
+.CodeDisplay input{
+	width:80%;
+	font-family: aceFuture;
+	background: black;
+	color: yellow;
+	min-height: 50px;
+	font-size: 36px;
+	text-align: center;	
+	
+}
+
+.CodeDisplay input::placeholder{
+		color: red;
+		animation: inputPulse 1300ms infinite;
+}
+
+.Controls input[type="color"] {
+	  padding: 0;
+	border: none;
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+}
+
+#initialScreen input[type="range"] {
+	  padding: 0;
+	border: none;
+	height: 60px;
+	width: 80%;
+	background-color: #444;
+	-webkit-appearance: none;
+}
+
+#initialScreen input[type="range"]::-webkit-slider-thumb {
+	  -webkit-appearance: none;
+	  background-color: #FFFF00;
+	  width: 25px;
+	  height: 50px;
+	  margin: none;
+	  padding: none;
+	}
+
+
+.shipDisplay{
+	height: 100px;
+	width: 100px;
+	margin: auto;
+
+}
+
+
+
+
+#initialScreen button {
+	  padding: 0px;
+	  margin:0px;
+	border: none;
+	background: yellow;
+	font-size: 36px;
+	color:black;
+	height: 100px;
+	width: 100%;
+	font-family: aceFuture;
+	animation: glowing 1300ms infinite;
+}
+
+
+#gameScreen {
+	  display: none;
+	  text-align: center;
+	  background-color: #2B2D42;
+	  color: #fff;
+	  margin: auto;
+	  padding:10px;
+	  padding-top:70px;
+	  width: 80%;
+  	}
+	 
+.shipHUD{
+		  padding:10px;
+		  background-color:black;
+	  }
+	  
+	  
+	.shipHUD canvas{
+		width: 100px;
+		height: 100px;	
+	} 
+	.touchControls{
+		background-color: #2B2D42;
+		z-index: 1
+	} 
+	  
+.touchControls canvas{
+	width: 100px;
+	height: 100px;
+}
+
+#gameScreen button {
+	  padding: 0px;
+	  margin:0px;
+	border: none;
+	background: yellow;
+	font-size: 36px;
+	color:black;
+	height: 100px;
+	width: 100%;
+	font-family: aceFuture;
+	animation: glowing 1300ms infinite;
+}
+
+
+
+
+
+@keyframes glowing {
+	0% {
+	  background-color: #a50000;
+	  box-shadow: 0 0 5px #a50000;
+	}
+	50% {
+	  background-color: #ff4000;
+	  box-shadow: 0 0 20px #ff4000;
+	}
+	100% {
+	  background-color: #a50000;
+	  box-shadow: 0 0 5px #a50000;
+	}
+  }
+  
+  @keyframes inputPulse {
+	  0% {
+		 background-color: #a50000;
+		color: #aa0000;
+		box-shadow: 0 0 5px #a50000;
+	  }
+	  50% {
+		  background-color: #000000;
+		  box-shadow: 0 0 5px #000000;
+		color: #ff4400;
+	  }
+	  100% {
+		  background-color: #a50000;
+		  box-shadow: 0 0 5px #a50000;
+		color: #aa0000;
+	  }
+	}
+	
+	@keyframes gameOverPulse {
+		  0% {
+			color: #ff0000;
+		  }
+		  50% {
+			color: #aa0000;
+		  }
+		  100% {
+			color: #ff0000;
+		  }
+		}
+	
+	
+
+
+	
+	
+#gameOverScreen {
+	display: none;
+	text-align: center;
+	background-color: #000000;
+	color: #aa0000;
+	margin: auto;
+	padding:40px;
+	padding-top: 150px;
+	width: 80%;
+	}
+	
+	#gameOverScreen h2{
+			animation: gameOverPulse 1300ms infinite;
+		}
+	
+	
+	
+	
+/* Stars 
+------------------------------------- */
+
+
+.space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width:80%;
+  margin:auto;
+  margin-top:0;
+  height:250px;
+}
+
+.stars {
+  background-image: 
+	radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+	radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+	radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+	radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+	radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+	radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+	opacity: 0;
+	transform: scale(0.5);
+	animation-timing-function: ease-in;
+  } 
+  85% {
+	opacity: 1;
+	transform: scale(2.8);
+	animation-timing-function: linear;
+  }
+  100% {
+	opacity: 0;
+	transform: scale(3.5);
+  }
+}

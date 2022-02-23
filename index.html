@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>Installation 21</title>
+  <!--
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+-->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <h1>INSTALLATION 21</h1>
+    </div>
+  </header>
+  <section class="initialScreen">
+      <div id="initialScreen">
+          <div>
+              <h3>Welcome to Installation 21 <span id="PlayerType">Rookie</span>!</h3>
+              <hr>
+              <p>Use the slider below to pick out a ship, then head over to the paint booth to customize your ride! Customizing your ship will help you find it on the big screen, so try and pick something memorable!</p> 
+          </div>
+          <div class="shipDisplay">
+            <canvas id="spritecanvas"image-rendering: pixelated;></canvas>
+          </div>
+          <div class="Controls">
+            <div>
+              <h4>Your Ship Model: <span id="shipModelDisplay">Pegasus</span></h4>
+              <input type="range" id="shipSlider" name="ship" min="0" max="98" step="1" value="0">
+              <!--<img id="spritesource" src="spritesheet1.png" width="64" height="64">-->
+            </div>
+                
+                <div>
+                  <label for="color">Choose your ship color!</label>
+                 <!--<input type="color" id="colorPicker" name="color" value="#e66465">-->
+                  <div id="picker"></div>
+                </div>
+                <br>
+          </div>
+          <div>
+            <h3>Registration</h3>
+            <hr>
+            <p>Before you can clear the Installation 21 security protocols, we're gonna need you to register for your pilot's license. Don't worry, we just need a name and of course, a launch code. If you need a launch code, you can simply scan the QR code at our booth, or talk to one of WorldStage's helpful space marines! Enter your name and code in the form below, and get ready to start your mission!</p> 
+        </div>
+            
+            <div class="CodeDisplay">
+              <div>
+                <label>Pilot Name:</label>
+              </div>
+              <div>
+                <input type="text" id="nameField" placeholder="ENTER NAME" maxlength="30" required >
+              </div>
+              <div>
+              <label>Launch Code:</label>
+              </div>
+              <div>
+              <input type="text" id="codeField" placeholder="ENTER CODE" maxlength="8" required >
+              </div>
+            </div>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-success" id="joinTDChannel">BLAST OFF!</button>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+  </section>
+    
+  <section class="gameScreen">
+      <div id="gameScreen">
+            <!--Game Controls, Score and Info Display-->
+            <div class="shipHUD">
+              <div>
+                <!--<h4>Pilot Registration: <span id="gameCodeDisplay"></span></h4>-->
+                <h4>SCORE:  <span id="gameScoreDisplay">SCORE</span>!</h4>
+            </div>
+              <canvas id="canvasHUD"></canvas>
+              <div>
+                <h4>You have  <span id="gameLivesDisplay">LIVES</span> lives left!</h4>
+                </div>
+                <div>
+                  <h4><span id="pickupDisplay"></span></h4>
+                  </div>
+                <div class="space">
+                  <div class="stars"></div>
+                  <div class="stars"></div>
+                  <div class="stars"></div>
+                  <div class="stars"></div>
+                  <div class="stars"></div>
+                </div>
+            </div>
+            
+            <div class="touchControls">
+                  <div>
+                  <canvas id="dummy"></canvas>
+                  <canvas id="canvasUp"></canvas>
+                  <canvas id="dummy"></canvas>
+                </div>
+                <div>
+                  <canvas id="canvasLeft"></canvas>
+                  <canvas id="canvasCenter"></canvas>
+                  <canvas id="canvasRight"></canvas>
+              </div>
+              <div>
+                  <canvas id="dummy"></canvas>
+                  <canvas id="canvasDown"></canvas>
+                  <canvas id="dummy"></canvas>
+              </div>
+            </div><!--end of touch controls-->
+            <!--Leave Game Button-->
+            <div><br><br><br></div>
+            <div>
+              <button type="submit" class="btn btn-success" id="leaveTDChannel">ABORT MISSION</button>
+            </div>
+      </div>
+      
+  </section>
+    
+  <section class="gameOverScreen">
+          <div id="gameOverScreen">
+            <div>
+              <h2>Game Over!</h2>    
+            </div>
+            <div>
+              <h4>Your Score was: <span id="gameOverDisplay"></span></h4>
+            </div>
+          </div>          
+  </section>
+  
+ 
+
+  <script src="https://cdn.socket.io/socket.io-2.3.1.slim.js"
+      crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+    
+  
+  <!--<canvas id="canvas"></canvas>-->
+  
+  
+  
+</body>
+</html>
